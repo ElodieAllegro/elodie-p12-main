@@ -1,0 +1,22 @@
+.recharts-responsive-container {
+  cursor: default;
+    width: 258px;
+    height: 263px !important;
+}
+ .recharts-yAxis{
+    display: none;
+}
+.recharts-legend-wrapper{
+    display: none;
+}
+.recharts-surface{
+  width: 258px;
+  height: 263px;
+}
+.recharts-default-tooltip{
+ background-color: rgb(254, 254, 254) !important;
+ color: rgb(13, 13, 13) !important;
+}
+ ul{
+  color: rgb(0, 0, 0) !important;
+}
