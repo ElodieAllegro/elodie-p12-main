@@ -1,5 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-import PropTypes from 'prop-types';
+
 
 
 const Performances = ({data}) => {
@@ -29,10 +29,6 @@ const kinds = {
     );
   }
 
-
-Performances.propTypes =  {
-  data: PropTypes.object.isRequired
-}
 
 export default Performances;
 

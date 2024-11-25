@@ -1,5 +1,4 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
-import PropTypes from 'prop-types';
 const scores = ({data}) => {
   console.log(data)
     
@@ -76,7 +75,5 @@ const scores = ({data}) => {
         </ResponsiveContainer>
       );
     }
-    Scores.propTypes =  {
-      data: PropTypes.object.isRequired
-    }
+   
 export default scores

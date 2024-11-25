@@ -1,5 +1,5 @@
 import { CartesianGrid, BarChart, XAxis, YAxis, Tooltip, Bar, ResponsiveContainer } from "recharts";
-import PropTypes from 'prop-types';
+
 
 const Activity = ({ data }) => {
     // Vérifie si les données existent
@@ -32,9 +32,7 @@ const Activity = ({ data }) => {
     );
 };
 
-Activity.propTypes =  {
-    data: PropTypes.object.isRequired
-  }
+
 
 export default Activity;
 

@@ -1,5 +1,5 @@
 import { CartesianGrid, LineChart, XAxis, YAxis, Tooltip, Legend, Line, ResponsiveContainer } from "recharts"
-import PropTypes from 'prop-types';
+
 import "./averageSession.css"
 
 const CustomTooltip = ({active, payload, label}) => {
@@ -57,8 +57,6 @@ const AverageSession = ({data}) => {
 
     
 }
-AverageSession.propTypes =  {
-    data: PropTypes.object.isRequired
-  }
+
 export default AverageSession
 
