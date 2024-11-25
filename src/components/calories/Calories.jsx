@@ -2,6 +2,7 @@ import iconCalories from "../../assets/calories-icon.svg";
 import iconCarbs from "../../assets/carbs-icon.svg";
 import iconFat from "../../assets/fat-icon.svg";
 import iconProtein from "../../assets/protein-icon.svg";
+import PropTypes from 'prop-types';
 import './calories.css';
 
 const Calories = ({ data }) => {
@@ -48,5 +49,7 @@ const Calories = ({ data }) => {
         </div>
     );
 };
-
+Calories.propTypes =  {
+    data: PropTypes.object.isRequired
+  }
 export default Calories;

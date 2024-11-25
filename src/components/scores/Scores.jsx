@@ -1,9 +1,10 @@
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
+import PropTypes from 'prop-types';
 const scores = ({data}) => {
   console.log(data)
     
       if (!data) return "data not found";
- // Définir le style pour le Legend
+ //style pour le Legend
  const style = {
   top: '50%',
   right: 0,
@@ -36,7 +37,7 @@ const scores = ({data}) => {
               dataKey="todayScore"
               cornerRadius={30}
               fill='red'
-              label={false}
+             
             />            
             <text
         x="50%"
@@ -74,5 +75,8 @@ const scores = ({data}) => {
           </RadialBarChart>
         </ResponsiveContainer>
       );
+    }
+    Scores.propTypes =  {
+      data: PropTypes.object.isRequired
     }
 export default scores
