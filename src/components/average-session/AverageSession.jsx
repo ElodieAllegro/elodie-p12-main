@@ -1,6 +1,17 @@
 import { CartesianGrid, LineChart, XAxis, YAxis, Tooltip, Legend, Line, ResponsiveContainer } from "recharts"
 import "./averageSession.css"
 
+const CustomTooltip = ({active, payload, label}) => {
+    console.log(payload)
+    if (active && payload && payload.length) {
+        return <div className="custom-tooltip">
+            {payload[0].value} min
+        </div>
+    }
+
+    return null
+}
+
 const AverageSession = ({data}) => {
 
     const days = {
@@ -18,14 +29,28 @@ const AverageSession = ({data}) => {
     }
     return (
      
-        <ResponsiveContainer>
+    <ResponsiveContainer>
       <LineChart data={data.sessions}>
-      <XAxis dataKey={({day}) => days[day]} />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="sessionLength" stroke="#FFF" strokeWidth={2} />
+        <XAxis 
+            dataKey={({day}) => days[day]} 
+            axisLine={false} 
+            tickLine={false} 
+            tick={{stroke: 'white', width: 0, fontWeight: 100, opacity: 0.5}}            
+        />
+        <Tooltip 
+            content={<CustomTooltip/>}
+            cursor={false}
+        />
+        <Legend />
+        <Line 
+            type="monotone" 
+            dataKey="sessionLength" 
+            stroke="#FFF" 
+            strokeWidth={2} 
+            dot={false}
+        />
       </LineChart>
-        </ResponsiveContainer>
+    </ResponsiveContainer>
        
     )
 

@@ -1,4 +1,4 @@
-.recharts-responsive-container {
+/*.recharts-responsive-container {
   cursor: default;
     width: 258px;
     height: 263px !important;
@@ -19,4 +19,11 @@
 }
  ul{
   color: rgb(0, 0, 0) !important;
+}*/
+
+.custom-tooltip {
+  background: white;
+  padding: 10px;
+  color: black;
+  font-size: 8px;
 }

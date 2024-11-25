@@ -1,0 +1,20 @@
+.dashboard-container {
+    display: flex;    
+
+}
+
+.dashboard-container main {
+    padding: 30px;
+}
+
+@media screen and (min-width: 1140px) {
+    .dashboard-container main {
+        padding: 30px 50px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .dashboard-container main {
+        padding: 30px 100px;
+    }
+}

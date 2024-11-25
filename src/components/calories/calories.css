@@ -1,0 +1,52 @@
+.calories{
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-top: 20px; */
+}
+.calorie-item {
+    background-color: rgba(251, 251, 251, 1);
+    width:258px;
+    height:124px;
+    border-radius: 5px 0px 0px 0px;
+    display: flex;
+    margin: 0 0 39px 0;
+    align-items: center;
+    padding: 0;
+}
+.calorie-item img{
+    margin: 32px 24px 32px 32px;
+    width: 60px;
+    height: 60px;
+}
+.text :first-child{
+    font-weight:700;
+    font-size: 20px;
+    margin-bottom: 5px;
+   
+}
+.text :last-child{
+    font-weight:500;
+    font-size: 14px;
+    color: rgb(116, 121, 140, 1);
+    margin-top: 5px;
+}
+/* taille d'ecran tablette */
+@media screen and (max-width: 1140px) {
+    .calories{
+        flex-wrap: nowrap;
+        padding-top:10px;
+        margin-top: 20px;
+    }
+    .calorie-item {
+    width:200px;
+    height:106px;
+    margin: 0;
+    }
+    .calorie-item img{
+        margin: 24px 16px 24px 16px;
+    }
+    .calorie-item .text p{
+    font-size: 16px;
+}
+
+}

@@ -1,4 +1,5 @@
-import { CartesianGrid, BarChart, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer } from "recharts";
+import { CartesianGrid, BarChart, XAxis, YAxis, Tooltip, Bar, ResponsiveContainer } from "recharts";
+import PropTypes from 'prop-types';
 
 const Activity = ({ data }) => {
     // Vérifie si les données existent
@@ -6,12 +7,10 @@ const Activity = ({ data }) => {
         return null;
     }
 
-    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-
   
     const formattedData = data.sessions.map((session, index) => ({
         ...session,
-        day: days[index % 7] 
+        idx: index + 1 
     }));
 
     return (
@@ -21,16 +20,21 @@ const Activity = ({ data }) => {
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
+                <XAxis dataKey="idx"/>
+                <YAxis hide/>
+                <YAxis orientation="right" yAxisId={1}/>
                 <Tooltip />
-                <Legend />
-                <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" />
-                <Bar dataKey="calories"fill="#E60000"  name="Calories brûlées (kCal)" /> 
+               
+                <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" barSize={7} radius={[3, 3, 0, 0]} yAxisId={1}/>
+                <Bar dataKey="calories"fill="#E60000"  name="Calories brûlées (kCal)" barSize={7} radius={[3, 3, 0, 0]}/> 
             </BarChart>
         </ResponsiveContainer>
     );
 };
+
+Activity.propTypes =  {
+    data: PropTypes.object.isRequired
+  }
 
 export default Activity;
 

@@ -1,4 +1,7 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
+
+
 const Performances = ({data}) => {
 
 const kinds = {
@@ -20,11 +23,17 @@ const kinds = {
           <PolarAngleAxis
           dataKey={({ kind }) => reversedKinds[kind - 1]}
         />
-          <Radar name="" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+          <Radar name="" dataKey="value" stroke="#FFF" fill="#FF0101" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
     );
   }
+
+
+Performances.propTypes =  {
+  data: PropTypes.object.isRequired
+}
+
 export default Performances;
 
 
