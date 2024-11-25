@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build-prod": "BASE_URL=elop12 vite build"
+    "build-prod": "BASE_URL=elodie-p12-main vite build"
   },
   "dependencies": {
     "react": "^18.3.1",
