@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { createBrowserRouter, createHashRouter, RouterProvider, Link } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Link } from 'react-router-dom';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
 
 const Base = () => {
