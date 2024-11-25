@@ -14,7 +14,6 @@ const Dashboard = () => {
     const [averageSession, setAverageSession] = useState();
     const [activity, setActivity] = useState();
     const [performances, setPerformances] = useState();
-    const [scores, setScores] = useState();
 
     useEffect(() => {
         (async () => {
@@ -51,11 +50,9 @@ const Dashboard = () => {
             <div style={{ display: 'grid' }}>
                 <div className="container-top">
                     <div className="activity-container">
-                    <h2>Activité quotidienne</h2> 
                         <Activity data={activity} />
                     </div>
                     <div className="calories-container">
-                        <h2></h2>
                         <Calories />
                     </div>
                 </div>
@@ -63,14 +60,12 @@ const Dashboard = () => {
                
                <div className="container-bottom">
                     <div className="average-session-container">
-                        <h2>Durée moyenne des sessions</h2>
                         <AverageSession data={averageSession} />
                     </div>
                     <div className="performances-container">
                         <Performances data={performances} />
                     </div>
                     <div className="score-container">
-                        <h2>Scores</h2> 
                     <Scores data={user.todayScore} />
                     </div>
                </div>
