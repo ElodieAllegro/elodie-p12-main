@@ -46,11 +46,17 @@ class ApiFetch {
 }
 
 class ApiMock {
-    getUserData(id){        
-        return Promise.resolve({
-            data: USER_MAIN_DATA.find(data => data.id === id)
-        })
-    }
+    async getUserData(id) {
+        try {
+          const user = USER_MAIN_DATA.find(data => data.id === id);
+          if (!user) {
+            throw new Error(`Utilisateur avec l'ID ${id} introuvable.`);
+          }
+          return Promise.resolve({ data: user });
+        } catch (error) {
+          return { errorMessage: "Les données utilisateur sont actuellement indisponibles." };
+        }
+      }
 
     getUserAverageSession(id){
         return Promise.resolve({
