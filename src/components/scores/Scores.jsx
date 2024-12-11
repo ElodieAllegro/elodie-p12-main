@@ -30,7 +30,6 @@ const scores = ({data}) => {
             />
             <RadialBar
               minAngle={90}
-              label={{ position: 'insideStart', fill: 'transparent' }}
               background
               clockWise
               dataKey="todayScore"

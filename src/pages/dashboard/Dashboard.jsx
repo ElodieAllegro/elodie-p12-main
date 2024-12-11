@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [averageSession, setAverageSession] = useState();
   const [activity, setActivity] = useState();
   const [performances, setPerformances] = useState();
-  const [scores, setScores] = useState();
+  // const [scores, setScores] = useState();
 
   useEffect(() => {
     (async () => {
