@@ -13,7 +13,10 @@ function App() {
     <>
       <header>
         <div className='logo'>
-          <img src={logo} alt="Logo" />
+        <a href="#">
+           <img src={logo} alt="Logo" />
+           </a>
+         
         </div>
         <nav>
           <ul>

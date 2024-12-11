@@ -16,9 +16,16 @@ class Api {
 
 class ApiFetch {
 
-    getUserData(id){
-        return fetch('http://localhost:3000/user/' + id)
-        .then(resp => resp.json())
+    async getUserData(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/user/${id}`);
+            if (!response.ok) {
+                throw new Error("Erreur lors de la récupération des données utilisateur.");
+            }
+            return await response.json();
+        } catch (error) {
+            return { error: error.message }; 
+        }
     }
 
     getUserAverageSession(id){

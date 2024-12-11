@@ -14,14 +14,16 @@ const Dashboard = () => {
   const [averageSession, setAverageSession] = useState();
   const [activity, setActivity] = useState();
   const [performances, setPerformances] = useState();
+  const [error, setError] = useState(null)
   // const [scores, setScores] = useState();
 
   useEffect(() => {
     (async () => {
       const api = new Api();
 
+try {
       const userData = await api.getUserData(parseInt(params.userId));
-      console.log("userData Data:", userData);
+      if (userData.error) throw new Error(userData.error);
       setUser(userData.data);
 
       const averageSessionData = await api.getUserAverageSession(
@@ -39,11 +41,19 @@ const Dashboard = () => {
       );
       console.log("Performances Data:", performancesData);
       setPerformances(performancesData.data);
+    } catch (err) {
+      console.error("Erreur lors de la récupération des données :", err.message);
+      setError("Une erreur est survenue lors du chargement des données. Veuillez réessayer plus tard.");
+    }
     })();
   }, [params.userId]);
 
+  if (error) {
+    return <p className="error-message">{error}</p>;
+  }
+
   if (!user) {
-    return null;
+    return <p>Utilisateur non trouvée.</p>;
   }
 
   return (
